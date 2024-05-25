@@ -5,10 +5,10 @@ services:
     image: mysql:8.0
     container_name: foodsharing_mysql
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: foodsharing
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: Kr@ti.123
+      MYSQL_DATABASE: food_sharing_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Kr@ti.123
     ports:
       - "3306:3306"
     volumes:
@@ -18,11 +18,11 @@ services:
     build: .
     container_name: foodsharing_app
     ports:
-      - "8080:8080"
+      - "8094:8094"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/foodsharing
-      SPRING_DATASOURCE_USERNAME: user
-      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/food_sharing_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Kr@ti.123
     depends_on:
       - mysql
 
